@@ -23,6 +23,8 @@ public class LandingPage extends BasePage{
 	
 	@FindBy(xpath = LandingPageObjects.XPATH_BTN_LOGIN)
 	private WebElement btnLogin;
+	@FindBy(xpath = LandingPageObjects.XPATH_TXT_LOGIN_ERROR_MESSAGE)
+	private WebElement txtLoginErrorMessage;
 	
 	public ProductsPage login(String username, String password) {
 		enterText(txtUserEmailField, username);
@@ -31,6 +33,11 @@ public class LandingPage extends BasePage{
 		ProductsPage productsPage = new ProductsPage(driver);
 		return productsPage;
 		
+	}
+
+	public String getErrorMessage(){
+		//waitUntilElementIsDisplayed(txtLoginErrorMessage, GlobalVariables.DELAY_MEDIUM);
+		return getElementText(txtLoginErrorMessage);
 	}
 	
 	public void goTo() {

@@ -12,22 +12,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.GlobalVariables;
 import webstore.objectRepository.BasePageObjects;
 import webstore.pages.CartPage;
+import webstore.pages.OrdersPage;
 
 
 public class BasePage {
 	
 	@FindBy(xpath = BasePageObjects.XPATH_BTN_SHOPPINGCART)
 	private WebElement btnShoppingCart;
-	
-	
+	@FindBy(xpath = BasePageObjects.XPATH_BTN_ORDERS)
+	private WebElement btnOders;
 	protected WebDriver driver;
-	
+
 	public BasePage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
+
 	protected void enterText(WebElement element, String text) {
 		waitUntilElementIsDisplayed(element, GlobalVariables.DELAY_LOW);
 		element.clear();
@@ -53,6 +53,19 @@ public class BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(delay));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
+
+	protected void waitUntilElementIsClickeable(WebElement element, long delay) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(delay));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	protected void delay(int duration) {
+        try {
+            Thread.sleep(duration* 1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 	
 	
 	protected void waitUntilLocatorIsDisplayed(String locator, String locatorType, long delay) {
@@ -86,11 +99,17 @@ public class BasePage {
 		return element;
 		
 	}
-	
+
 	public CartPage clickShopingCart() {
+		delay(GlobalVariables.DELAY_MEDIUM);
 		clickElement(btnShoppingCart);
 		return new CartPage(driver);
-		
+	}
+
+	public OrdersPage clickOnOrders(){
+		delay(GlobalVariables.DELAY_LOW);
+		clickElement(btnOders);
+		return new OrdersPage(driver);
 	}
 	
 	protected void clickUsingActions(WebElement element) {

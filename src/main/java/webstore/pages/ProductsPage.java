@@ -25,8 +25,7 @@ public class ProductsPage extends BasePage{
 	
 	public void addProductToCart(String productName) {
 		clickElement(findElementByXpathGivenAString( ProductPageObjects.XPATH_BTN_ADD_SHOPPING_CART, productName));
-		waitUntilElementIsDisplayed(txtAdd2CartMessage,GlobalVariables.DELAY_LOW);
-		
+		delay(GlobalVariables.DELAY_MEDIUM);
 	}
 	
 

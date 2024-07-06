@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <groups>
+        <run>
+            <include name="smoke-test"/>
+        </run>
+    </groups>
+
+    <test verbose="2" thread-count="5"  name="LoginTest">
+        <classes>
+            <class name="Login.ErrorValidationsTest">
+                <methods>
+                    <include name="getLoginErrorMessage"/>
+                    <include name="verifyProductName"/></methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

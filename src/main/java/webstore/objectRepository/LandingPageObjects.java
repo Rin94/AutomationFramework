@@ -8,4 +8,5 @@ public class LandingPageObjects {
 	
 	public static final String XPATH_BTN_LOGIN = "//input[@id='login']";
 
+    public static final String XPATH_TXT_LOGIN_ERROR_MESSAGE = "//*[contains(@class,'toast-error')]";
 }

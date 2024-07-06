@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel = "tests" name="All Test Suite">
+
+    <test verbose="2" thread-count="5" preserve-order="true" name="LoginTest">
+        <classes>
+            <class name="Login.ErrorValidationsTest">
+                <methods>
+                    <include name="getLoginErrorMessage"/>
+                    <include name="verifyProductName"/></methods>
+            </class>
+        </classes>
+
+    </test>
+    <test name="Submit Order Test" thread-count="5" preserve-order="true">
+        <classes>
+            <class name="Orders.SumbitOrderTest">
+                <methods>
+                    <include name="submitOrder"/>
+                    <include name="orderHistoryTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
