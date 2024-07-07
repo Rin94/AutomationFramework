@@ -1,0 +1,19 @@
+[
+  {
+    "email": "jared12345@gmail.com",
+    "password": "Admin@12345",
+    "product": "ZARA COAT 3",
+    "country": "Belgium",
+    "orderConfirmation": "THANKYOU FOR THE ORDER."
+
+  },
+  {
+    "email": "jared12345@gmail.com",
+    "password": "Admin@12345",
+    "product": "IPHONE 13 PRO",
+    "country": "Japan",
+    "orderConfirmation": "THANKYOU FOR THE ORDER."
+
+  }
+
+]

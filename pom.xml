@@ -35,6 +35,20 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.16.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.17.2</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
@@ -48,11 +62,42 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.9.1</version>
 		</dependency>
-
-
-
-
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>Regression</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>2.22.1</version>
+							<configuration>
+								<suiteXmlFiles>testSuites/testng.xml</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+		<profile>
+			<id>Smoke</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>2.22.1</version>
+							<configuration>
+								<suiteXmlFiles>testSuites/smokes.xml</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+	</profiles>
 
 	<build>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
@@ -75,6 +120,9 @@
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.1</version>
+					<configuration>
+						<suiteXmlFiles>testSuites/testng.xml</suiteXmlFiles>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>

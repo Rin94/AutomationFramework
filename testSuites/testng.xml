@@ -2,6 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel = "tests" name="All Test Suite">
 
+    <listeners>
+        <listener class-name="TestComponents.Listeners"/>
+    </listeners>
+
     <test verbose="2" thread-count="5" preserve-order="true" name="LoginTest">
         <classes>
             <class name="Login.ErrorValidationsTest">

@@ -29,6 +29,7 @@ public class BasePage {
 	}
 
 	protected void enterText(WebElement element, String text) {
+
 		waitUntilElementIsDisplayed(element, GlobalVariables.DELAY_LOW);
 		element.clear();
 		element.sendKeys(text);

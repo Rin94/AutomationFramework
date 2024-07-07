@@ -9,7 +9,10 @@ webstore/objectRepository/CheckoutPageObjects.class
 webstore/pages/CheckoutPage.class
 webstore/pages/OrdersPage.class
 webstore/objectRepository/OrderReceiptPageObjects.class
+utils/DataReader.class
+utils/DataReader$1.class
 utils/PageScroll.class
+utils/ExtentReporterNG.class
 utils/StringUtils.class
 webstore/objectRepository/ProductPageObjects.class
 webstore/objectRepository/OrdersPageObjects.class

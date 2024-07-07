@@ -3,6 +3,7 @@
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/objectRepository/BasePageObjects.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/objectRepository/LandingPageObjects.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/objectRepository/CartPageObjects.java
+/Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/utils/DataReader.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/utils/GetCurrentDateTime.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/pages/OrdersPage.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/utils/CurrentDateAndTime.java
@@ -10,6 +11,7 @@
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/pages/ProductsPage.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/objectRepository/CheckoutPageObjects.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/pages/CheckoutPage.java
+/Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/utils/ExtentReporterNG.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/webstore/objectRepository/ProductPageObjects.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/utils/StringUtils.java
 /Users/jaredsalinas/Desktop/AutomationFramework/src/main/java/BasePage/BasePage.java

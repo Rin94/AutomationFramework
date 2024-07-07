@@ -1,6 +1,7 @@
 package Login;
 
 import TestComponents.BaseTest;
+import TestComponents.Retry;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import webstore.pages.CartPage;
@@ -15,7 +16,7 @@ import static org.testng.Assert.assertEquals;
 public class ErrorValidationsTest extends BaseTest{
 	
 	
-	@Test(groups = {"smoke-test"})
+	@Test(groups = {"smoke-test"}, retryAnalyzer = Retry.class)
 	public void getLoginErrorMessage() throws InterruptedException, IOException {
 
 		landingPage.login("wrong@gmail.com", "Admin@12345");
