@@ -1,6 +1,5 @@
 package BasePage;
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +12,8 @@ import utils.GlobalVariables;
 import webstore.objectRepository.BasePageObjects;
 import webstore.pages.CartPage;
 import webstore.pages.OrdersPage;
+
+import static java.lang.Thread.sleep;
 
 
 public class BasePage {
@@ -55,6 +56,16 @@ public class BasePage {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
+	protected void waitUntilElementIsDisplayed(By by, long delay) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(delay));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+	}
+	public void waitForElementToDisappear(int time) {
+
+		delay(time);
+
+	}
+
 	protected void waitUntilElementIsClickeable(WebElement element, long delay) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(delay));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -62,47 +73,18 @@ public class BasePage {
 
 	protected void delay(int duration) {
         try {
-            Thread.sleep(duration* 1000L);
+            sleep((duration*1000));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
-	
-	
-	protected void waitUntilLocatorIsDisplayed(String locator, String locatorType, long delay) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(delay));
-		switch (locatorType) {
-		
-			case "XPATH":
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
-				break;
-				
-			case "ID":
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
-				break;
-				
-			case "CSS":
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locatorType)));
-				break;
-				
-			case "CLASSNAME":
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(locatorType)));
-				break;
-				
-		}
-				
-	}
-	
+
 	protected WebElement findElementByXpathGivenAString(String locator, String text) {
 		locator = locator.replace("replace",text);
-		WebElement element = driver.findElement(By.xpath(locator));
-		
-		return element;
-		
+		return driver.findElement(By.xpath(locator));
 	}
 
 	public CartPage clickShopingCart() {
-		delay(GlobalVariables.DELAY_MEDIUM);
 		clickElement(btnShoppingCart);
 		return new CartPage(driver);
 	}
@@ -112,7 +94,7 @@ public class BasePage {
 		clickElement(btnOders);
 		return new OrdersPage(driver);
 	}
-	
+
 	protected void clickUsingActions(WebElement element) {
 		Actions a = new Actions(driver);
 		a.click(element).build().perform();

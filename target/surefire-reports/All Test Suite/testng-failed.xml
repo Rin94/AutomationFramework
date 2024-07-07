@@ -8,11 +8,23 @@
     <classes>
       <class name="Login.ErrorValidationsTest">
         <methods>
-          <include name="getLoginErrorMessage"/>
           <include name="tearDown"/>
+          <include name="verifyProductName"/>
           <include name="lauchApplication"/>
         </methods>
       </class> <!-- Login.ErrorValidationsTest -->
     </classes>
   </test> <!-- LoginTest(failed) -->
+  <test thread-count="5" parallel="tests" name="Submit Order Test(failed)" verbose="0">
+    <classes>
+      <class name="Orders.SumbitOrderTest">
+        <methods>
+          <include name="submitOrder" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="orderHistoryTest"/>
+          <include name="lauchApplication"/>
+        </methods>
+      </class> <!-- Orders.SumbitOrderTest -->
+    </classes>
+  </test> <!-- Submit Order Test(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

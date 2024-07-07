@@ -1,4 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 192.578 s - in TestSuite
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 1, Time elapsed: 116.614 s <<< FAILURE! - in TestSuite
+submitOrder(Orders.SumbitOrderTest)  Time elapsed: 7.201 s  <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <i _ngcontent-gqa-c33="" class="fa fa-shopping-cart"></i> is not clickable at point (1151, 27). Other element would receive the click: <div _ngcontent-gqa-c31="" class="ngx-spinner-overlay ng-tns-c31-1 ng-trigger ng-trigger-fadeIn ng-star-inserted ng-animating" style="background-color: rgba(51, 51, 51, 0.8); z-index: 99999; position: fixed;">...</div>
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.4', java.version: '16.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [438c29eea5b55bb4f51905fb826ea1a8, clickElement {id=f.2B9C40A00AAE88843B617637F0D92941.d.9853F77C03B580C84E075A6E57FC2E4A.e.81}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/wm/kc35rbg56t3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63572}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63572/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (438c29eea5b55bb4f51905fb826ea1a8)] -> xpath: //nav//button//i[contains(@class,'fa-shopping-cart')]]
+Session ID: 438c29eea5b55bb4f51905fb826ea1a8
+	at Orders.SumbitOrderTest.submitOrder(SumbitOrderTest.java:36)
+
+verifyProductName(Login.ErrorValidationsTest)  Time elapsed: 26.549 s  <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <i _ngcontent-fsy-c33="" class="fa fa-shopping-cart"></i> is not clickable at point (1151, 27). Other element would receive the click: <div _ngcontent-fsy-c31="" class="ngx-spinner-overlay ng-tns-c31-1 ng-trigger ng-trigger-fadeIn ng-star-inserted ng-animating" style="background-color: rgba(51, 51, 51, 0.8); z-index: 99999; position: fixed;">...</div>
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.4', java.version: '16.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a95e0a3054b23d38923cfd3728f30329, clickElement {id=f.F16EA4EDDD4F257B4ED0E6596A09A4B2.d.3D4454E05914C685E784773B1E9F68DB.e.85}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/wm/kc35rbg56t3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63617}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63617/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (a95e0a3054b23d38923cfd3728f30329)] -> xpath: //nav//button//i[contains(@class,'fa-shopping-cart')]]
+Session ID: a95e0a3054b23d38923cfd3728f30329
+	at Login.ErrorValidationsTest.verifyProductName(ErrorValidationsTest.java:29)
+
