@@ -74,8 +74,7 @@ public class BaseTest {
 		return new LandingPage(driver);
 	}
 	@AfterMethod(alwaysRun = true)
-	public void tearDown() throws InterruptedException {
-		Thread.sleep(1000);
+	public void tearDown() {
 		driver.close();
 		driver.quit();
 	}

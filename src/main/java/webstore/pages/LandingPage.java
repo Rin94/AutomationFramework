@@ -30,9 +30,7 @@ public class LandingPage extends BasePage{
 		enterText(txtUserEmailField, username);
 		enterText(txtPasswordField, password);
 		clickElement(btnLogin);
-		ProductsPage productsPage = new ProductsPage(driver);
-		return productsPage;
-		
+		return new ProductsPage(driver);
 	}
 
 	public String getErrorMessage(){
